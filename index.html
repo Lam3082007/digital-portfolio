@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Portfolio | Vũ Xuân Lâm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        dark: '#0B1120',
+                        darker: '#080C17',
+                        primary: '#38BDF8', // Xanh tech
+                        accent: '#818CF8'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Tùy chỉnh hiệu ứng Neon và Scrollbar */
+        body {
+            background-color: #0B1120;
+            color: #e2e8f0;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B1120;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38BDF8;
+        }
+        
+        /* Hiệu ứng Glow cho Card và Image */
+        .tech-glow {
+            transition: all 0.4s ease;
+        }
+        .tech-glow:hover {
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+            transform: translateY(-5px);
+            border-color: #38BDF8;
+        }
+        
+        .avatar-glow {
+            box-shadow: 0 0 30px rgba(129, 140, 248, 0.3);
+            transition: all 0.5s ease;
+        }
+        .avatar-glow:hover {
+            box-shadow: 0 0 50px rgba(56, 189, 248, 0.6);
+            transform: scale(1.02);
+        }
+
+        /* Glassmorphism Navbar */
+        .glass-nav {
+            background: rgba(11, 17, 32, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-dark">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 font-mono text-primary font-bold text-xl tracking-tighter">
+                    < Lâm.Dev />
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-primary transition-colors text-sm font-medium uppercase tracking-wider">About Me</a>
+                    <a href="#projects" class="text-gray-300 hover:text-primary transition-colors text-sm font-medium uppercase tracking-wider">Projects</a>
+                    <a href="#reflection" class="text-gray-300 hover:text-primary transition-colors text-sm font-medium uppercase tracking-wider">Reflection</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about" class="min-h-screen flex items-center pt-20 pb-12 relative overflow-hidden">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
+        <div class="absolute bottom-20 right-10 w-72 h-72 bg-accent rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 space-y-6">
+                    <p class="font-mono text-primary text-lg">Xin chào, tôi là</p>
+                    <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight">Vũ Xuân Lâm</h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-400 font-light">Sinh viên Kỹ thuật & Khoa học Dữ liệu - UET</h2>
+                    
+                    <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700/50 backdrop-blur-sm space-y-4">
+                        <p><span class="text-primary font-semibold">Sở thích:</span> [Điền sở thích cá nhân, ví dụ: Code, Chơi Guitar, Chơi game...]</p>
+                        <p><span class="text-primary font-semibold">Mục tiêu học tập:</span> [Điền...]</p>
+                        <p><span class="text-primary font-semibold">Định hướng phát triển:</span> [Điền...]</p>
+                        <p><span class="text-primary font-semibold">Mục tiêu của Portfolio:</span> [Điền...]</p>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden avatar-glow border-2 border-gray-700">
+                        <img src="https://via.placeholder.com/400x400/1e293b/38bdf8?text=[Chèn+Ảnh+Cá+Nhân]" alt="Avatar" class="object-cover w-full h-full">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darker to-transparent opacity-60"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-darker relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Các Dự Án & Bài Tập</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-gray-900 rounded-xl border border-gray-800 p-1 flex flex-col tech-glow overflow-hidden">
+                    <div class="h-48 bg-gray-800 relative group overflow-hidden rounded-t-lg">
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-500 font-mono text-sm border-2 border-dashed border-gray-600 m-2 rounded">
+                            [Chèn ảnh chụp minh họa cấu trúc thư mục tối ưu]
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-white mb-3">Bài 1 - Thao tác cơ bản với tệp tin và thư mục</h3>
+                        <div class="text-sm text-gray-400 space-y-2 mb-6 flex-grow">
+                            <p><strong class="text-gray-300">Mục tiêu:</strong> [Điền...]</p>
+                            <p><strong class="text-gray-300">Quá trình thực hiện:</strong> [Điền...]</p>
+                        </div>
+                        <a href="#" class="inline-block w-full text-center py-2 px-4 bg-gray-800 hover:bg-primary hover:text-dark text-primary border border-primary rounded transition-colors font-mono text-sm uppercase">Xem chi tiết / Minh chứng</a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl border border-gray-800 p-1 flex flex-col tech-glow overflow-hidden">
+                    <div class="h-48 bg-gray-800 relative group overflow-hidden rounded-t-lg">
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-500 font-mono text-sm border-2 border-dashed border-gray-600 m-2 rounded text-center px-4">
+                            [Chèn bảng đánh giá nguồn tin]
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-white mb-3">Bài 2 - Tìm kiếm và đánh giá thông tin học thuật</h3>
+                        <div class="text-sm text-gray-400 space-y-2 mb-6 flex-grow">
+                            <p><strong class="text-gray-300">Mục tiêu:</strong> [Điền...]</p>
+                            <p><strong class="text-gray-300">Quá trình thực hiện:</strong> [Điền...]</p>
+                        </div>
+                        <a href="#" class="inline-block w-full text-center py-2 px-4 bg-gray-800 hover:bg-primary hover:text-dark text-primary border border-primary rounded transition-colors font-mono text-sm uppercase">Xem chi tiết / Minh chứng</a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl border border-gray-800 p-1 flex flex-col tech-glow overflow-hidden">
+                    <div class="h-48 bg-gray-800 relative group overflow-hidden rounded-t-lg">
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-500 font-mono text-sm border-2 border-dashed border-gray-600 m-2 rounded text-center px-4">
+                            [Chèn so sánh Prompt ban đầu và cải tiến]
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-white mb-3">Bài 3 - Viết Prompt hiệu quả cho các tác vụ học tập</h3>
+                        <div class="text-sm text-gray-400 space-y-2 mb-6 flex-grow">
+                            <p><strong class="text-gray-300">Mục tiêu:</strong> [Điền...]</p>
+                            <p><strong class="text-gray-300">Quá trình thực hiện:</strong> [Điền...]</p>
+                        </div>
+                        <a href="#" class="inline-block w-full text-center py-2 px-4 bg-gray-800 hover:bg-primary hover:text-dark text-primary border border-primary rounded transition-colors font-mono text-sm uppercase">Xem chi tiết / Minh chứng</a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl border border-gray-800 p-1 flex flex-col tech-glow overflow-hidden">
+                    <div class="h-48 bg-gray-800 relative group overflow-hidden rounded-t-lg">
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-500 font-mono text-sm border-2 border-dashed border-gray-600 m-2 rounded text-center px-4">
+                            [Chèn ảnh minh họa phối hợp trực tuyến]
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-white mb-3">Bài 4 - Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</h3>
+                        <div class="text-sm text-gray-400 space-y-2 mb-6 flex-grow">
+                            <p><strong class="text-gray-300">Mục tiêu:</strong> [Điền...]</p>
+                            <p><strong class="text-gray-300">Quá trình thực hiện:</strong> [Điền...]</p>
+                        </div>
+                        <a href="#" class="inline-block w-full text-center py-2 px-4 bg-gray-800 hover:bg-primary hover:text-dark text-primary border border-primary rounded transition-colors font-mono text-sm uppercase">Xem chi tiết / Minh chứng</a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl border border-gray-800 p-1 flex flex-col tech-glow overflow-hidden">
+                    <div class="h-48 bg-gray-800 relative group overflow-hidden rounded-t-lg">
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-500 font-mono text-sm border-2 border-dashed border-gray-600 m-2 rounded text-center px-4">
+                            [Chèn sản phẩm nội dung số hoàn thiện]
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-white mb-3">Bài 5 - Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</h3>
+                        <div class="text-sm text-gray-400 space-y-2 mb-6 flex-grow">
+                            <p><strong class="text-gray-300">Mục tiêu:</strong> [Điền...]</p>
+                            <p><strong class="text-gray-300">Quá trình thực hiện:</strong> [Điền...]</p>
+                        </div>
+                        <a href="#" class="inline-block w-full text-center py-2 px-4 bg-gray-800 hover:bg-primary hover:text-dark text-primary border border-primary rounded transition-colors font-mono text-sm uppercase">Xem chi tiết / Minh chứng</a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl border border-gray-800 p-1 flex flex-col tech-glow overflow-hidden">
+                    <div class="h-48 bg-gray-800 relative group overflow-hidden rounded-t-lg">
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-500 font-mono text-sm border-2 border-dashed border-gray-600 m-2 rounded text-center px-4">
+                            [Chèn bộ nguyên tắc cá nhân]
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-white mb-3">Bài 6 - Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</h3>
+                        <div class="text-sm text-gray-400 space-y-2 mb-6 flex-grow">
+                            <p><strong class="text-gray-300">Mục tiêu:</strong> [Điền...]</p>
+                            <p><strong class="text-gray-300">Quá trình thực hiện:</strong> [Điền...]</p>
+                        </div>
+                        <a href="#" class="inline-block w-full text-center py-2 px-4 bg-gray-800 hover:bg-primary hover:text-dark text-primary border border-primary rounded transition-colors font-mono text-sm uppercase">Xem chi tiết / Minh chứng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reflection" class="py-20 bg-dark relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Tổng Kết & Nhìn Lại</h2>
+                <div class="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-8">
+                <blockquote class="bg-gray-800/40 border-l-4 border-primary p-6 rounded-r-xl shadow-lg backdrop-blur hover:bg-gray-800/60 transition-colors">
+                    <div class="flex items-center mb-3">
+                        <svg class="w-6 h-6 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <h3 class="text-xl font-bold text-white">Trải nghiệm & Cảm nhận cá nhân</h3>
+                    </div>
+                    <p class="text-gray-300 italic">"[Điền...]"</p>
+                </blockquote>
+
+                <blockquote class="bg-gray-800/40 border-l-4 border-accent p-6 rounded-r-xl shadow-lg backdrop-blur hover:bg-gray-800/60 transition-colors">
+                    <div class="flex items-center mb-3">
+                        <svg class="w-6 h-6 text-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                        <h3 class="text-xl font-bold text-white">Kiến thức & Kỹ năng quan trọng nhất</h3>
+                    </div>
+                    <p class="text-gray-300 italic">"[Điền...]"</p>
+                </blockquote>
+
+                <blockquote class="bg-gray-800/40 border-l-4 border-green-400 p-6 rounded-r-xl shadow-lg backdrop-blur hover:bg-gray-800/60 transition-colors">
+                    <div class="flex items-center mb-3">
+                        <svg class="w-6 h-6 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <h3 class="text-xl font-bold text-white">Điểm tâm đắc</h3>
+                    </div>
+                    <p class="text-gray-300 italic">"[Điền...]"</p>
+                </blockquote>
+
+                <blockquote class="bg-gray-800/40 border-l-4 border-red-400 p-6 rounded-r-xl shadow-lg backdrop-blur hover:bg-gray-800/60 transition-colors">
+                    <div class="flex items-center mb-3">
+                        <svg class="w-6 h-6 text-red-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        <h3 class="text-xl font-bold text-white">Thách thức gặp phải</h3>
+                    </div>
+                    <p class="text-gray-300 italic">"[Điền...]"</p>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-darker py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-500 font-mono text-sm">© 2026 Code & Designed by Vũ Xuân Lâm.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
